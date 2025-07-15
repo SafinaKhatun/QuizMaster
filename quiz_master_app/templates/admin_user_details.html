@@ -1,0 +1,20 @@
+{% extends 'admin_base.html' %}
+
+{% block title %}User Details{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="text-center">User Details</h2>
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">{{ user[1] }}</h4>
+            <p><strong>Email:</strong> {{ user[2] }}</p>
+            <p><strong>Qualification:</strong> {{ user[3] }}</p>
+            <p><strong>Date of Birth:</strong> {{ user[4] }}</p>
+        </div>
+    </div>
+    <div class="text-center mt-3">
+        <a href="{{ url_for('admin_dashboard') }}" class="btn btn-primary">Back to Dashboard</a>
+    </div>
+</div>
+{% endblock %}

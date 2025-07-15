@@ -1,0 +1,47 @@
+{% extends 'admin_base.html' %}
+
+{% block title %}Subject Details{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="text-center">Subject Details</h2>
+
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">{{ subject['name'] }}</h4>
+        </div>
+    </div>
+ 
+    {% if chapters %}
+        <h4 class="mt-4">Chapters in "{{ subject['name'] }}"</h4>
+        <ul class="list-group">
+            {% for chapter in chapters %}
+                <li class="list-group-item">
+                    {{ chapter['name'] }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p class="text-center text-muted">No chapters available for this subject.</p>
+    {% endif %}
+ 
+    {% if quizzes %}
+        <h4 class="mt-4">Quizzes under this Subject</h4>
+        <ul class="list-group">
+            {% for quiz in quizzes %}
+                <li class="list-group-item">
+                    <a href="{{ url_for('admin_view_quiz', quiz_id=quiz['id']) }}" class="text-decoration-none">
+                        Quiz ID: {{ quiz['id'] }} | Chapter: {{ quiz['chapter_name'] }} | Date: {{ quiz['date'] }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p class="text-center text-muted">No quizzes available for this subject.</p>
+    {% endif %}
+
+    <div class="text-center mt-3">
+        <a href="{{ url_for('admin_dashboard') }}" class="btn btn-primary">Back to Dashboard</a>
+    </div>
+</div>
+{% endblock %}

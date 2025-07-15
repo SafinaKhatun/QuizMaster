@@ -1,0 +1,42 @@
+{% extends "admin_base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Add New Quiz</h2>
+    
+    <form method="POST">
+        <div class="mb-3">
+            <label for="name" class="form-label">Quiz Name:</label>
+            <input type="text" id="name" name="name" class="form-control" required>
+        </div>
+         
+        <div class="mb-3">
+            <label class="form-label">Chapter:</label>
+            <select class="form-select" name="chapter_id" required>
+                <option value="" disabled selected>Select a chapter</option>
+                {% for chapter in chapters %}
+                    <option value="{{ chapter['id'] }}">{{ chapter['name'] }}</option>
+                {% endfor %}
+            </select>
+        </div>
+   
+        <div class="mb-3">
+            <label for="date_of_quiz" class="form-label">Date of Quiz:</label>
+            <input type="date" id="date_of_quiz" name="date_of_quiz" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="time_duration" class="form-label">Time Duration (minutes):</label>
+            <input type="number" id="time_duration" name="time_duration" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="remarks" class="form-label">Remarks (Optional):</label>
+            <textarea id="remarks" name="remarks" class="form-control"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Add Quiz</button>
+        <a href="{{ url_for('admin_quizzes') }}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+{% endblock %}

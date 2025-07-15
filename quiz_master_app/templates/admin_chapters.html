@@ -1,0 +1,34 @@
+{% extends 'admin_base.html' %}
+
+{% block title %}Chapters List{% endblock %}
+
+{% block content %}
+<h2 class="text-center">Chapters List</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for chapter in chapters %}
+        <tr>
+            <td>{{ chapter[0] }}</td>
+            <td>{{ chapter[1] }}</td>
+            <td>{{ chapter[2] }}</td>
+             
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+ 
+<div class="text-center mt-4">
+    <a href="{{ url_for('add_chapter', subject_id=subject_id) }}" class="btn btn-lg btn-primary">+Add Chapter</a>
+    <a href="{{ url_for('admin_dashboard') }}" class="btn btn-lg btn-primary">Dashboard</a>
+</div>
+
+{% endblock %}

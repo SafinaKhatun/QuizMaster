@@ -1,0 +1,36 @@
+{% extends "user_base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="card shadow p-4">
+        <h2 class="text-center text-primary">Quiz: Question {{ q_no + 1 }} / {{ total_questions }}</h2>
+        <hr>
+
+        <form method="POST" action="{{ url_for('next_question', quiz_id=quiz_id, q_no=q_no) }}">
+            <p class="lead"><strong>Q{{ q_no+1 }}:</strong> {{ question[1] }}</p>
+
+            <div class="list-group">
+                <label class="list-group-item">
+                    <input type="radio" name="answer" value="1" required> {{ question[2] }}
+                </label>
+                <label class="list-group-item">
+                    <input type="radio" name="answer" value="2"> {{ question[3] }}
+                </label>
+                <label class="list-group-item">
+                    <input type="radio" name="answer" value="3"> {{ question[4] }}
+                </label>
+                <label class="list-group-item">
+                    <input type="radio" name="answer" value="4"> {{ question[5] }}
+                </label>
+            </div>
+
+            <div class="d-flex justify-content-between mt-4">
+                {% if q_no > 0 %}
+                    <a href="{{ url_for('start_quiz', quiz_id=quiz_id, q_no=q_no-1) }}" class="btn btn-secondary">Previous</a>
+                {% endif %}
+                <button type="submit" class="btn btn-success">Save & Next</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "user_base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="card p-4 shadow-sm">
+        <h4 class="text-center">Quiz Details</h4>
+        <hr>
+        <p><strong>ID:</strong> {{ quiz[0] }}</p>
+        <p><strong>Chapter Name:</strong> {{ quiz[1] }}</span></p>
+        <p><strong>Number of Questions:</strong> {{ num_questions}}</p>
+        <p><strong>Scheduled Date:</strong> {{ quiz[3] }}</p>
+        <p><strong>Duration (hh:mm):</strong> {{ quiz[4] }}</p>
+        <a href="{{ url_for('user_dashboard') }}" class="btn btn-secondary mt-3">Close</a>
+    </div>
+</div>
+{% endblock %}

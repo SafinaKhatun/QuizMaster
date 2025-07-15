@@ -1,0 +1,33 @@
+{% extends "user_base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center">Quiz Scores</h2>
+
+    <div class="card mt-4">
+        <div class="card-body">
+            {% if scores %}
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Quiz Name</th>                        
+                        <th>Score</th>                         
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for score in scores %}
+                    <tr>
+                        <td>{{ score['quiz_name'] }}</td>                            
+                        <td>{{ score['score'] }}/{{ score['total_questions'] }}</td>                             
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+            <p class="text-center">No scores available.</p>
+            {% endif %}
+        </div>
+    </div>
+    <a href="{{ url_for('user_dashboard') }}" class="btn btn-secondary">Back</a>
+</div>
+{% endblock %}

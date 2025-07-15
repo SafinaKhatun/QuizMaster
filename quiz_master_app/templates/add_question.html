@@ -1,0 +1,56 @@
+{% extends 'admin_base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="text-center text-primary">Add New Question</h2>
+
+    <form method="POST" action="{{ url_for('add_question', quiz_id=quiz_id) }}">
+         
+        <div class="mb-3">
+            <label class="form-label">Chapter:</label>
+            <input type="hidden" name="chapter_id" value="{{ chapters.id }}">
+            <p class="form-control-plaintext">{{ chapters.name }}</p>
+        </div>
+        
+
+        <div class="mb-3">
+            <label class="form-label">Question Title:</label>
+            <input type="text" class="form-control" name="question_title" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Question Statement:</label>
+            <textarea class="form-control" name="question_statement" required></textarea>
+        </div>
+
+        <h4 class="text-secondary">Options</h4>
+        <div class="mb-2">
+            <label>Option 1:</label>
+            <input type="text" class="form-control" name="option1" required>
+        </div>
+
+        <div class="mb-2">
+            <label>Option 2:</label>
+            <input type="text" class="form-control" name="option2" required>
+        </div>
+
+        <div class="mb-2">
+            <label>Option 3:</label>
+            <input type="text" class="form-control" name="option3" required>
+        </div>
+
+        <div class="mb-2">
+            <label>Option 4:</label>
+            <input type="text" class="form-control" name="option4" required>
+        </div>
+
+        <div class="mb-3">
+            <label>Correct Option (1-4):</label>
+            <input type="number" class="form-control" name="correct_option" min="1" max="4" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Save and Next</button>
+        <a href="{{ url_for('admin_quizzes') }}" class="btn btn-secondary">Close</a>
+    </form>
+</div>
+{% endblock %}

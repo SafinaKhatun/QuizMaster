@@ -1,0 +1,25 @@
+{% extends "admin_base.html" %}
+{% block content %}
+<h2>Subjects</h2>
+<a href="{{ url_for('admin_dashboard') }}" class="btn btn-secondary mb-3">Back to Dashboard</a>
+
+<a href="{{ url_for('add_subject') }}" class="btn btn-success mb-3">Add New Subject</a>
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <div class="alert alert-info">
+      {% for message in messages %}
+        <p>{{ message }}</p>
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endwith %}
+
+<ul>
+  {% for subject in subjects %}
+  <li>{{ subject[1] }} - {{ subject[2] }}
+       
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}
