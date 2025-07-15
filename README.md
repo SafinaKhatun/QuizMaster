@@ -41,28 +41,30 @@ Quiz Master is a structured quiz management system designed for admin-led quiz c
 
 Here are some screenshots of the Quiz Master application:
 
-![Login Page](Screenshots/login.png)
-*Login Page for Admin/User*
 
-![Admin Dashboard](Screenshots/admin_dashboard.png)
-*Admin Dashboard*
-
-![Admin Quizzes](Screenshots/admin_quizzes.png)
-*Admin Quizzes* 
-
-![Admin Summary](Screenshots/admin_summary.png)
-*Admin Summary*
-
-![Registration Page](Screenshots/user_registration.png)
-*Registration Page for User*
-
-![User Dashboard](Screenshots/user_dashboard.png)
-*User Dashboard*
-
-![User Scores](Screenshots/user_scores.png)
-*User Scores* 
-
-![User Summary](Screenshots/user_summary.png)
-*User Summary*
+#### *Login Page for Admin/User*
+![Login Page](quiz_master_app/Screenshots/login.png)
+ 
+#### *Admin Dashboard*
+![Admin Dashboard](quiz_master_app/Screenshots/admin_dashboard.png)
+ 
+#### *Admin Quizzes* 
+![Admin Quizzes](quiz_master_app/Screenshots/admin_quizzes.png)
+ 
+#### *Admin Summary*
+![Admin Summary](quiz_master_app/Screenshots/admin_summary.png)
+ 
+#### *Registration Page for User*
+![Registration Page](quiz_master_app/Screenshots/user_registraion.png)
+ 
+#### *User Dashboard*
+![User Dashboard](quiz_master_app/Screenshots/user_dashboard.png)
+ 
+#### *User Scores* 
+![User Scores](quiz_master_app/Screenshots/user_scores.png)
+ 
+#### *User Summary*
+![User Summary](quiz_master_app/Screenshots/user_summary.png)
+ 
 
 
